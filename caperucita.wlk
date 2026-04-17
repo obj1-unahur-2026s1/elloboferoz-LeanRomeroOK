@@ -1,17 +1,38 @@
 object caperucita {
-    var peso = self.pesoInicial()
-    var manzanasActuales = self.manzanasEnCanasta()
-    method pesoInicial() = 60
-    method pesoManzanas() = 0.2
-    method manzanasEnCanasta() = 5
-
-    method esComida(){
-        manzanasActuales = 0
-        peso = 0
-        return self.manzanasEnCanasta() * self.pesoManzanas() + self.pesoInicial()
+    const peso = 60
+    
+    method peso() {
+        return peso + canasta.cantidadManzanas * manzana.peso()
     }
 
-    method revivir() {
-        peso = self.pesoInicial()
+    method perderManzana(){
+        canasta.perderManzana()
     }
+}
+
+object canasta{
+    var cantidadManzanas = 6
+    method cantidadManzanas() = cantidadManzanas
+    method perderManzana() {
+        cantidadManzanas = cantidadManzanas - 1
+    }
+    method cantidadMaximaManzanas() = 6
+}
+
+object manzana {
+  method peso() = 0.2
+}
+
+object abuelita {
+  const peso = 50
+
+  method peso() = peso
+
+}
+
+object cazador {
+    var peso = 150
+
+    method peso() = 150
+
 }

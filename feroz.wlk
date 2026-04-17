@@ -1,9 +1,10 @@
-import abuelita.*
 import caperucita.*
-import cazador.*
 object feroz {
-  method pesoInicial() = 10
-  var peso = self.pesoInicial()
+  var peso = 10
+
+  method peso() {
+    return peso
+  }
 
   method esSaludable()= (peso >= 20 and peso <= 150)
 
@@ -11,10 +12,12 @@ object feroz {
     peso = peso + unidades
   }
 
-  method crisis() = self.pesoInicial()
+  method crisis() {
+    peso = 10
+  }
 
-  method comer(unidades){
-    self.cambiarPeso(unidades * 0.10)
+  method comer(unPersonaje){
+    self.cambiarPeso(unPersonaje.peso() * 0.1)
   }
 
 
