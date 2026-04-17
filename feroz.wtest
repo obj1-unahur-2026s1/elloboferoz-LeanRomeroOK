@@ -1,0 +1,34 @@
+import caperucita.*
+import feroz.*
+
+describe "Testeo historia del lobo Feroz" {
+  test "El lobo va corriendo hasta el bosque..." {
+    feroz.correr()
+    assert.equals(9, feroz.peso())
+  }
+
+  test "El lobo corre a la casa de la abuelita" {
+    feroz.correr()
+    assert.equals(9, feroz.peso())
+  }
+
+  test "Luego de comersela, se disfraza de ella." {
+    feroz.comer(abuelita)
+    assert.equals(15, feroz.peso())
+  }
+
+  test "Caperucita cruza el bosque y se le cae una manzana de su canasta." {
+    caperucita.perderManzana()
+    assert.equals(5, canasta.cantidadManzanas())
+  }
+
+  test "Feroz se come a Caperucita con canasta llena y todo." {
+    feroz.comer(caperucita)
+    assert.equals(16.12, feroz.peso())
+  }
+
+  test "El lobo intenta comerse al cazador pero este le dispara y le provoca una crisis" {
+    feroz.comer(cazador)
+    assert.equals(10, feroz.peso())
+  }
+}

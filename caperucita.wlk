@@ -1,9 +1,7 @@
 object caperucita {
     const peso = 60
     
-    method peso() {
-        return peso + canasta.cantidadManzanas * manzana.peso()
-    }
+    method peso() = peso + canasta.cantidadManzanas() * manzana.peso()
 
     method perderManzana(){
         canasta.perderManzana()
@@ -34,5 +32,9 @@ object cazador {
     var peso = 150
 
     method peso() = 150
+
+    method disparar(){
+        return "Bang!"
+    }
 
 }

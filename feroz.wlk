@@ -17,7 +17,13 @@ object feroz {
   }
 
   method comer(unPersonaje){
-    self.cambiarPeso(unPersonaje.peso() * 0.1)
+    if (unPersonaje.peso() == cazador.peso()){
+      cazador.disparar()
+      self.crisis()
+    }
+    else {
+      self.cambiarPeso(unPersonaje.peso() * 0.1)
+    }
   }
 
 
